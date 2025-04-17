@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | NeuroVision AI</title>
+  <link rel="stylesheet" href="static/CSS/style.css">
+  <link rel="stylesheet" href="static/CSS/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-icon">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="preloader-text">Loading FAQ</div>
+    </div>
+  </div>
+
+  <!-- Floating Particles Background -->
+  <div class="particles" id="particles-js"></div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Header -->
+    <header class="fade-in">
+      <div class="logo">
+        <img src="static/images/logo.svg" alt="NeuroVision AI">
+        <span>NeuroVision AI</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="#" class="active">FAQ</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- FAQ Hero -->
+    <section class="faq-hero">
+      <div class="faq-hero-content slide-up">
+        <h1>Frequently Asked <span>Questions</span></h1>
+        <p>Your guide to understanding NeuroVision AI’s free MRI analysis platform.</p>
+        <div class="search-box">
+          <input type="text" placeholder="Search FAQs...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <div class="faq-hero-image">
+        <img src="static/images/mri-sample.jpg" alt="MRI Scan">
+      </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-content">
+      <div class="faq-container">
+        <div class="faq-categories">
+          <div class="category active" data-category="general">General</div>
+          <div class="category" data-category="technical">Technical</div>
+          <div class="category" data-category="security">Security</div>
+          <div class="category" data-category="clinical">Clinical</div>
+          <div class="category" data-category="credits">Credits</div>
+        </div>
+        
+        <div class="faq-accordion">
+          <!-- General Questions -->
+          <div class="faq-category general show">
+            <h2 class="faq-category-title">General Questions</h2>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>What is NeuroVision AI?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>NeuroVision AI is a free, state-of-the-art MRI analysis platform that uses deep learning to identify neurological conditions. It was developed by four dedicated students as a research and clinical support tool.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Which MRI scans does it analyze?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>The model analyzes brain MRI scans and differentiates between glioma, meningioma, pituitary tumors, and non-tumor images. It has been trained on a large, curated dataset of these specific classes.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>How accurate is NeuroVision AI?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Our system achieves over 98% accuracy on validation datasets, making it a reliable tool to aid clinicians in detecting neurological anomalies.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Is the model really free to use?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Yes, NeuroVision AI is completely free to use for research and clinical support. We believe in advancing medical imaging accessibility and innovation.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Technical Questions -->
+          <div class="faq-category technical">
+            <h2 class="faq-category-title">Technical Questions</h2>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>What is the underlying architecture?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>The model is built using a transfer learning approach with a ResNet50 backbone, fine-tuned on MRI images to classify glioma, meningioma, pituitary tumors, and non-tumor cases.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>What file formats are supported for input?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>We support DICOM (recommended for full-resolution data), as well as NIfTI, JPEG, and PNG formats for convenience.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>What are the hardware requirements for running this model?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>For inference, a modern multi-core CPU with at least 16GB of RAM is sufficient. For training or large-scale inference, a GPU-enabled system or cloud instance (e.g., g4dn series) is recommended.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>How is the model deployed?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>The trained model is saved in Keras HDF5 format and can be deployed directly in a Flask or FastAPI backend for real-time MRI analysis.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Security Questions -->
+          <div class="faq-category security">
+            <h2 class="faq-category-title">Security & Privacy</h2>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>How do you ensure data privacy?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>All data transferred through NeuroVision AI is encrypted using industry-standard protocols. We adhere to HIPAA guidelines and ensure that only authorized users can access the data.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Is my data stored securely?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Yes, your MRI scans and analysis results are stored in secure, geographically redundant AWS data centers, ensuring both security and compliance with data protection regulations.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Who can access the data processed by NeuroVision AI?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>Access to data is strictly limited to authorized personnel as designated by the user, and all data interactions are logged for audit purposes.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Clinical Questions -->
+          <div class="faq-category clinical">
+            <h2 class="faq-category-title">Clinical Use</h2>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>How should clinicians use the results from NeuroVision AI?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>The analysis is designed to supplement clinical evaluation. Clinicians should use the results as an additional tool to confirm findings and guide further diagnostic steps, never as a sole basis for diagnosis.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Can this tool replace a radiologist?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>No, NeuroVision AI is intended to augment the expertise of radiologists by highlighting potential areas of concern. Final diagnoses must always be made by qualified medical professionals.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Has the model been validated clinically?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>The model has undergone rigorous validation using a large dataset of MRI scans, achieving over 98% accuracy. However, it remains a decision support tool and should be used in conjunction with professional judgment.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Credits -->
+          <div class="faq-category credits">
+            <h2 class="faq-category-title">About & Credits</h2>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Who developed NeuroVision AI?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>This free MRI analysis model was developed by a team of four dedicated students as part of a research project. Their collaboration has resulted in an innovative tool to assist in neurological diagnosis.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>What is the intended use of this tool?</h3>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>NeuroVision AI is designed as a clinical decision support system. It is freely available for research and clinical integration, providing rapid analysis to aid healthcare professionals in evaluating MRI scans.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+      
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="static/js/script.js"></script>
+</body>
+</html>

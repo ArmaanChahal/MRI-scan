@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroVision AI | Advanced MRI Analysis</title>
+    <link rel="stylesheet" href="../static/CSS/style.css">
+    <link rel="stylesheet" href="../static/CSS/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span >
+            </div>
+            <div class="preloader-text">Initializing NeuroVision AI</div>
+        </div>
+    </div>
+
+    <!-- Floating Particles Background -->
+    <div class="particles" id="particles-js"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="fade-in">
+            <div class="logo">
+                <img src="static/images/mri-sample.jpg" alt="NeuroVision AI">
+                <span>NeuroVision AI</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content slide-up">
+                <h1>Advanced MRI Analysis with <span>AI Precision</span></h1>
+                <p>Upload your MRI scans and receive instant, accurate detection of neurological conditions with our cutting-edge deep learning technology.</p>
+                <div class="hero-buttons">
+                    <button class="btn-secondary">Try Demo <i class="fas fa-play"></i></button>
+                    <button class="btn-secondary">Learn More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="hero-image float">
+                <img src="images/mri-sample.jpg" alt="MRI Scan">
+                <div class="scan-overlay"></div>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section class="upload-section" id="upload">
+            <div class="upload-container scale-in">
+                <div class="upload-header">
+                    <h2>Upload Your MRI Scans</h2>
+                    <p>Supported formats: DICOM, NIfTI, JPEG, PNG (Max 10 files, 50MB each)</p>
+                </div>
+                <div class="upload-area" id="dropZone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag & Drop MRI Files Here</h3>
+                    <p>or</p>
+                    <button class="btn-browse">Browse Files</button>
+                    <input type="file" id="fileInput" multiple accept=".dcm,.nii,.jpg,.jpeg,.png" style="display: none;">
+                </div>
+                <div class="upload-progress hidden">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">Uploading: <span>0%</span></div>
+                </div>
+                <div class="upload-options">
+                    <div class="option-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>Brain Scan</h4>
+                        <p>Tumors, lesions, atrophy</p>
+                    </div>
+                    <div class="option-card">
+                        <i class="fas fa-heart"></i>
+                        <h4>Cardiac MRI</h4>
+                        <p>Heart structure & function</p>
+                    </div>
+                    <div class="option-card">
+                        <i class="fas fa-bone"></i>
+                        <h4>Spinal Scan</h4>
+                        <p>Disc herniation, stenosis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (Initially Hidden) -->
+        <section class="results-section hidden" id="results">
+            <div class="results-container">
+                <div class="results-header">
+                    <h2>Analysis Results</h2>
+                    <div class="results-meta">
+                        <span class="scan-date">Processed: Just now</span>
+                        <span class="scan-id">ID: NV-2023-11-15-42</span>
+                    </div>
+                </div>
+                <div class="results-content">
+                    <div class="results-viewer">
+                        <div class="viewer-controls">
+                            <button class="viewer-btn"><i class="fas fa-layer-group"></i> Layers</button>
+                            <button class="viewer-btn"><i class="fas fa-sliders-h"></i> Adjust</button>
+                            <button class="viewer-btn"><i class="fas fa-ruler-combined"></i> Measure</button>
+                            <button class="viewer-btn"><i class="fas fa-arrows-alt"></i> Fullscreen</button>
+                        </div>
+                        <div class="mri-viewer">
+                            <div class="mri-image">
+                                <img src="images/mri-sample.jpg" alt="MRI Scan">
+                                <div class="mri-annotations">
+                                    <div class="annotation" style="top: 30%; left: 45%;" data-findings="Potential lesion detected"></div>
+                                </div>
+                            </div>
+                            <div class="mri-slider">
+                                <input type="range" min="1" max="100" value="50" class="slider" id="mriSlice">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="results-findings">
+                        <div class="findings-summary">
+                            <h3>Findings Summary</h3>
+                            <div class="confidence-meter">
+                                <div class="confidence-fill" style="width: 87%;"></div>
+                                <span>87% Confidence</span>
+                            </div>
+                            <ul class="findings-list">
+                                <li class="finding-item">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <div>
+                                        <h4>Potential Lesion Detected</h4>
+                                        <p>Right parietal lobe, approximately 8mm in diameter</p>
+                                    </div>
+                                    <span class="severity high">High</span>
+                                </li>
+                                <li class="finding-item">
+                                    <i class="fas fa-info-circle"></i>
+                                    <div>
+                                        <h4>Mild Ventricular Enlargement</h4>
+                                        <p>Lateral ventricles slightly enlarged for age</p>
+                                    </div>
+                                    <span class="severity medium">Medium</span>
+                                </li>
+                                <li class="finding-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <h4>Normal White Matter</h4>
+                                        <p>No signs of demyelination</p>
+                                    </div>
+                                    <span class="severity low">Normal</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="findings-actions">
+                            <button class="btn-download"><i class="fas fa-file-pdf"></i> Download Report</button>
+                            <button class="btn-consult"><i class="fas fa-user-md"></i> Consult Specialist</button>
+                            <button class="btn-compare"><i class="fas fa-chart-line"></i> Compare with Previous</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="section-header">
+                <h2>Cutting-Edge <span>Features</span></h2>
+                <p>Powered by deep neural networks trained on millions of annotated scans</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Our proprietary algorithms detect 120+ neurological conditions with 98.7% accuracy.</p>
+                    <div class="feature-badge">FDA Cleared</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Real-Time Processing</h3>
+                    <p>Get results in minutes, not days. Our cloud infrastructure scales to your needs.</p>
+                    <div class="feature-badge">HIPAA Compliant</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Longitudinal Tracking</h3>
+                    <p>Compare scans over time to monitor disease progression or treatment efficacy.</p>
+                    <div class="feature-badge">New</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="section-header">
+                <h2>How <span>NeuroVision AI</span> Works</h2>
+                <p>Three simple steps to advanced diagnostic insights</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Upload Your Scans</h3>
+                        <p>Securely upload DICOM or standard image files through our encrypted portal.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>AI Processing</h3>
+                        <p>Our neural networks analyze every slice, detecting anomalies and patterns.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Receive Comprehensive Report</h3>
+                        <p>Get a detailed PDF report with annotated images and clinical insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="section-header">
+                <h2>Trusted by <span>Leading Institutions</span></h2>
+            </div>
+            <div class="testimonial-carousel">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>NeuroVision AI has reduced our diagnostic time by 70% while improving detection rates for small lesions.</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. Sarah Chen">
+                        <div>
+                            <h4>Dr. Sarah Chen</h4>
+                            <p>Chief of Neuroradiology, Massachusetts General Hospital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>The longitudinal analysis feature has transformed how we monitor MS patients in our clinic.</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. James Wilson">
+                        <div>
+                            <h4>Dr. James Wilson</h4>
+                            <p>Neurologist, Cleveland Clinic</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="trust-badges">
+                <img src="https://via.placeholder.com/150x60?text=FDA" alt="FDA">
+                <img src="https://via.placeholder.com/150x60?text=HIPAA" alt="HIPAA">
+                <img src="https://via.placeholder.com/150x60?text=CE" alt="CE Mark">
+                <img src="https://via.placeholder.com/150x60?text=ISO13485" alt="ISO 13485">
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>Ready to Experience the Future of MRI Analysis?</h2>
+                <p>Join hundreds of medical professionals using NeuroVision AI for faster, more accurate diagnostics.</p>
+                <button class="btn-cta pulse">Get Started Now <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="team" class="team-footer">
+            <div class="footer-container">
+                <h2 class="section-title">Meet Our Team</h2>
+                
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-card">
+                        <div class="member-profile">
+                            <h3>Armaan Chahal</h3>
+                            <p class="member-role">Frontend Developer, AWS technician</p>
+                            <p class="member-bio">Designed the UI/UX and implemented all interactive components. Helped with AWS training of the model</p>
+                            <a href="https://github.com/ArmaanChahal" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Team Member 2 -->
+                    <div class="team-card">
+                        <div class="member-profile">
+                            <h3>Harkaran Gabbi</h3>
+                            <p class="member-role">Backend Specialist</p>
+                            <p class="member-bio">Built the MRI processing API and database architecture</p>
+                            <a href="https://github.com/HarryGabbi" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Team Member 3 -->
+                    <div class="team-card">
+                        <div class="member-profile">
+                            <h3>Md Rownak Abtahee Dg</h3>
+                            <p class="member-role">Model Engineer</p>
+                            <p class="member-bio">Developed machine learning models for MRI analysis</p>
+                            <a href="https://github.com/RownakDiganta" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Team Member 4 -->
+                    <div class="team-card">
+                        <div class="member-profile">
+                            <h3>Arun Paudel</h3>
+                            <p class="member-role">Model Engineer</p>
+                            <p class="member-bio">Developed machine learning models for MRI analysis</p>
+                            <a href="https://github.com/roarun" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2025 NeuroVision AI. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
