@@ -5,7 +5,7 @@ This project is an AI-powered MRI tumor classification system that uses a deep l
 
 ## 1. Demo
 A sample interface that allows users to upload MRI images and receive classification results in real-time.
-
+<img src="demo.png">
 ---
 
 ## 2. Installation
