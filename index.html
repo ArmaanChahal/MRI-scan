@@ -15,7 +15,7 @@
         <div class="preloader-inner">
             <div class="preloader-icon">
                 <span></span>
-                <span></span >
+                <span></span>
             </div>
             <div class="preloader-text">Initializing NeuroVision AI</div>
         </div>
@@ -28,17 +28,16 @@
     <div class="main-container">
         <!-- Header -->
         <header class="fade-in">
-                <div class="logo">
-                    <img src="logo.svg" alt="NeuroVision AI">
-                    <span>NeuroVision AI</span>
-                </div>
+            <div class="logo">
+                <img src="logo.svg" alt="NeuroVision AI">
+                <span>NeuroVision AI</span>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="/" class="active">Home</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="/faq">FAQ</a></li>
                 </ul>
             </nav>
         </header>
@@ -49,8 +48,9 @@
                 <h1>Advanced MRI Analysis with <span>AI Precision</span></h1>
                 <p>Upload your MRI scans and receive instant, accurate detection of neurological conditions with our cutting-edge deep learning technology.</p>
                 <div class="hero-buttons">
-                    <button class="btn-secondary">Try Demo <i class="fas fa-play"></i></button>
-                    <button class="btn-secondary">Learn More <i class="fas fa-arrow-right"></i></button>
+                    <a href="https://en.wikipedia.org/wiki/Residual_neural_network" class="btn-secondary">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                      </a>
                 </div>
             </div>
             <div class="hero-image float">
@@ -63,8 +63,8 @@
         <section class="upload-section" id="upload">
             <div class="upload-container scale-in">
                 <div class="upload-header">
-                    <h2>Upload Your MRI Scans </h2>
-                    <p>Will not work because github doesn't have trained model. check github for sample output</p>
+                    <h2>Upload Your MRI Scans</h2>
+                    <p>Will not work because Github doesn't have trained keras model. check github for sample output</p>
                 </div>
                 <div class="upload-area" id="dropZone">
                     <i class="fas fa-cloud-upload-alt"></i>
@@ -85,16 +85,6 @@
                         <h4>Brain Scan</h4>
                         <p>Tumors, lesions, atrophy</p>
                     </div>
-                    <div class="option-card">
-                        <i class="fas fa-heart"></i>
-                        <h4>Cardiac MRI</h4>
-                        <p>Heart structure & function</p>
-                    </div>
-                    <div class="option-card">
-                        <i class="fas fa-bone"></i>
-                        <h4>Spinal Scan</h4>
-                        <p>Disc herniation, stenosis</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -111,12 +101,7 @@
                 </div>
                 <div class="results-content">
                     <div class="results-viewer">
-                        <div class="viewer-controls">
-                            <button class="viewer-btn"><i class="fas fa-layer-group"></i> Layers</button>
-                            <button class="viewer-btn"><i class="fas fa-sliders-h"></i> Adjust</button>
-                            <button class="viewer-btn"><i class="fas fa-ruler-combined"></i> Measure</button>
-                            <button class="viewer-btn"><i class="fas fa-arrows-alt"></i> Fullscreen</button>
-                        </div>
+                        
                         <div class="mri-viewer">
                             <div class="mri-image">
                                 <img src="images/mri-sample.jpg" alt="MRI Scan">
@@ -165,8 +150,6 @@
                         </div>
                         <div class="findings-actions">
                             <button class="btn-download"><i class="fas fa-file-pdf"></i> Download Report</button>
-                            <button class="btn-consult"><i class="fas fa-user-md"></i> Consult Specialist</button>
-                            <button class="btn-compare"><i class="fas fa-chart-line"></i> Compare with Previous</button>
                         </div>
                     </div>
                 </div>
@@ -185,7 +168,7 @@
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>AI-Powered Analysis</h3>
-                    <p>Our proprietary algorithms detect 120+ neurological conditions with 98.7% accuracy.</p>
+                    <p>Our proprietary algorithms detect 3 neurological conditions with 91.38% accuracy.</p>
                     <div class="feature-badge">FDA Cleared</div>
                 </div>
                 <div class="feature-card">
@@ -193,16 +176,8 @@
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h3>Real-Time Processing</h3>
-                    <p>Get results in minutes, not days. Our cloud infrastructure scales to your needs.</p>
+                    <p>Get results in seconds, not days. Our cloud infrastructure scales to your needs.</p>
                     <div class="feature-badge">HIPAA Compliant</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>Longitudinal Tracking</h3>
-                    <p>Compare scans over time to monitor disease progression or treatment efficacy.</p>
-                    <div class="feature-badge">New</div>
                 </div>
             </div>
         </section>
@@ -239,63 +214,13 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section class="testimonials">
-            <div class="section-header">
-                <h2>Trusted by <span>Leading Institutions</span></h2>
-            </div>
-            <div class="testimonial-carousel">
-                <div class="testimonial-slide active">
-                    <div class="testimonial-quote">
-                        <i class="fas fa-quote-left"></i>
-                        <p>NeuroVision AI has reduced our diagnostic time by 70% while improving detection rates for small lesions.</p>
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. Sarah Chen">
-                        <div>
-                            <h4>Dr. Sarah Chen</h4>
-                            <p>Chief of Neuroradiology, Massachusetts General Hospital</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-quote">
-                        <i class="fas fa-quote-left"></i>
-                        <p>The longitudinal analysis feature has transformed how we monitor MS patients in our clinic.</p>
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. James Wilson">
-                        <div>
-                            <h4>Dr. James Wilson</h4>
-                            <p>Neurologist, Cleveland Clinic</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
-                    <div class="carousel-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-            <div class="trust-badges">
-                <img src="https://via.placeholder.com/150x60?text=FDA" alt="FDA">
-                <img src="https://via.placeholder.com/150x60?text=HIPAA" alt="HIPAA">
-                <img src="https://via.placeholder.com/150x60?text=CE" alt="CE Mark">
-                <img src="https://via.placeholder.com/150x60?text=ISO13485" alt="ISO 13485">
-            </div>
-        </section>
+    <br><br><br>
 
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="cta-container">
                 <h2>Ready to Experience the Future of MRI Analysis?</h2>
                 <p>Join hundreds of medical professionals using NeuroVision AI for faster, more accurate diagnostics.</p>
-                <button class="btn-cta pulse">Get Started Now <i class="fas fa-arrow-right"></i></button>
             </div>
         </section>
 
@@ -332,7 +257,7 @@
                     <!-- Team Member 3 -->
                     <div class="team-card">
                         <div class="member-profile">
-                            <h3>Md Rownak Abtahee Dg</h3>
+                            <h3>Md Rownak Abtahee Diganta</h3>
                             <p class="member-role">Model Engineer</p>
                             <p class="member-bio">Developed machine learning models for MRI analysis</p>
                             <a href="https://github.com/RownakDiganta" target="_blank" class="github-link">
