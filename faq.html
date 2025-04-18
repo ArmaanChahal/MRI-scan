@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ | NeuroVision AI</title>
-  <link rel="stylesheet" href="static/CSS/style.css">
-  <link rel="stylesheet" href="static/CSS/animations.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -29,16 +29,13 @@
     <!-- Header -->
     <header class="fade-in">
       <div class="logo">
-        <img src="static/images/logo.svg" alt="NeuroVision AI">
+        <img src="logo.svg" alt="NeuroVision AI">
         <span>NeuroVision AI</span>
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#features">Features</a></li>
-          <li><a href="index.html#how-it-works">How It Works</a></li>
-          <li><a href="#" class="active">FAQ</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/faq">FAQ</a></li>
         </ul>
       </nav>
     </header>
@@ -48,26 +45,15 @@
       <div class="faq-hero-content slide-up">
         <h1>Frequently Asked <span>Questions</span></h1>
         <p>Your guide to understanding NeuroVision AI’s free MRI analysis platform.</p>
-        <div class="search-box">
-          <input type="text" placeholder="Search FAQs...">
-          <button><i class="fas fa-search"></i></button>
-        </div>
       </div>
       <div class="faq-hero-image">
-        <img src="static/images/mri-sample.jpg" alt="MRI Scan">
+        <img src="mri-sample.jpg" alt="MRI Scan">
       </div>
     </section>
 
     <!-- FAQ Content -->
     <section class="faq-content">
       <div class="faq-container">
-        <div class="faq-categories">
-          <div class="category active" data-category="general">General</div>
-          <div class="category" data-category="technical">Technical</div>
-          <div class="category" data-category="security">Security</div>
-          <div class="category" data-category="clinical">Clinical</div>
-          <div class="category" data-category="credits">Credits</div>
-        </div>
         
         <div class="faq-accordion">
           <!-- General Questions -->
@@ -97,7 +83,7 @@
                 <i class="fas fa-chevron-down"></i>
               </div>
               <div class="faq-answer">
-                <p>Our system achieves over 98% accuracy on validation datasets, making it a reliable tool to aid clinicians in detecting neurological anomalies.</p>
+                <p>Our system achieves over 91.38% accuracy on validation datasets, making it a reliable tool to aid clinicians in detecting neurological anomalies.</p>
               </div>
             </div>
             <div class="faq-item">
@@ -134,11 +120,11 @@
             </div>
             <div class="faq-item">
               <div class="faq-question">
-                <h3>What are the hardware requirements for running this model?</h3>
+                <h3>What are the hardware requirements we used to make this model?</h3>
                 <i class="fas fa-chevron-down"></i>
               </div>
               <div class="faq-answer">
-                <p>For inference, a modern multi-core CPU with at least 16GB of RAM is sufficient. For training or large-scale inference, a GPU-enabled system or cloud instance (e.g., g4dn series) is recommended.</p>
+                <p>-We used AWS based 4 g4dn.xlarge processors with 16GiB of RAM and 128 GiB of memory over multiple days.</p>
               </div>
             </div>
             <div class="faq-item">
@@ -148,38 +134,6 @@
               </div>
               <div class="faq-answer">
                 <p>The trained model is saved in Keras HDF5 format and can be deployed directly in a Flask or FastAPI backend for real-time MRI analysis.</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Security Questions -->
-          <div class="faq-category security">
-            <h2 class="faq-category-title">Security & Privacy</h2>
-            <div class="faq-item">
-              <div class="faq-question">
-                <h3>How do you ensure data privacy?</h3>
-                <i class="fas fa-chevron-down"></i>
-              </div>
-              <div class="faq-answer">
-                <p>All data transferred through NeuroVision AI is encrypted using industry-standard protocols. We adhere to HIPAA guidelines and ensure that only authorized users can access the data.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <h3>Is my data stored securely?</h3>
-                <i class="fas fa-chevron-down"></i>
-              </div>
-              <div class="faq-answer">
-                <p>Yes, your MRI scans and analysis results are stored in secure, geographically redundant AWS data centers, ensuring both security and compliance with data protection regulations.</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <h3>Who can access the data processed by NeuroVision AI?</h3>
-                <i class="fas fa-chevron-down"></i>
-              </div>
-              <div class="faq-answer">
-                <p>Access to data is strictly limited to authorized personnel as designated by the user, and all data interactions are logged for audit purposes.</p>
               </div>
             </div>
           </div>
@@ -211,7 +165,7 @@
                 <i class="fas fa-chevron-down"></i>
               </div>
               <div class="faq-answer">
-                <p>The model has undergone rigorous validation using a large dataset of MRI scans, achieving over 98% accuracy. However, it remains a decision support tool and should be used in conjunction with professional judgment.</p>
+                <p>The model has undergone rigorous validation using a large dataset of MRI scans, achieving over 91.38% accuracy. However, it remains a decision support tool and should be used in conjunction with professional judgment.</p>
               </div>
             </div>
           </div>
@@ -242,9 +196,71 @@
         </div>
       </div>
     </section>
-      
+
+    <!-- Footer -->
+      <footer id="team" class="team-footer">
+        <div class="footer-container">
+            <h2 class="section-title">Contact Our Team</h2>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-card">
+                    <div class="member-profile">
+                        <h3>Armaan Chahal</h3>
+                        <p class="member-role">Frontend Developer, AWS technician</p>
+                        <p class="member-bio">Designed the UI/UX and implemented all interactive components. Helped with AWS training of the model</p>
+                        <a href="https://github.com/ArmaanChahal" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Team Member 2 -->
+                <div class="team-card">
+                    <div class="member-profile">
+                        <h3>Harkaran Gabbi</h3>
+                        <p class="member-role">Backend Specialist</p>
+                        <p class="member-bio">Built the MRI processing API and database architecture</p>
+                        <a href="https://github.com/HarryGabbi" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                    <div class="member-profile">
+                        <h3>Md Rownak Abtahee Diganta</h3>
+                        <p class="member-role">Model Engineer</p>
+                        <p class="member-bio">Developed machine learning models for MRI analysis</p>
+                        <a href="https://github.com/RownakDiganta" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Team Member 4 -->
+                <div class="team-card">
+                    <div class="member-profile">
+                        <h3>Arun Paudel</h3>
+                        <p class="member-role">Model Engineer</p>
+                        <p class="member-bio">Developed machine learning models for MRI analysis</p>
+                        <a href="https://github.com/roarun" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-copyright">
+            <p>&copy; 2025 NeuroVision AI. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="static/js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
